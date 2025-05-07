@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Hochschule Burgenland (angepasst nach Richtlinie 2024/25)</title>
+    <id>http://www.zotero.org/styles/hochschule-burgenland</id>
+    <link href="http://www.zotero.org/styles/hochschule-burgenland" rel="self"/>
+    <author>
+      <name>OpenAI ChatGPT</name>
+    </author>
+    <category citation-format="author-date"/>
+    <updated>2025-05-07T00:00:00+00:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". " name-as-sort-order="first"/>
+    </names>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="citation-locator">
+    <group delimiter=", ">
+      <label variable="locator" form="short" text-case="lowercase" strip-periods="true" suffix=". "/>
+      <text variable="locator"/>
+    </group>
+  </macro>
+
+  <citation>
+    <layout prefix="(" suffix=")" delimiter=", ">
+      <text macro="author"/>
+      <text macro="issued"/>
+      <group delimiter=", ">
+        <label variable="locator" form="short" prefix="S. "/>
+        <text variable="locator"/>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout suffix="." delimiter=". ">
+      <names variable="author">
+        <name and="text" name-as-sort-order="first" sort-separator=", " initialize-with=". " delimiter=", "/>
+      </names>
+      <date variable="issued">
+        <date-part name="year" prefix=" (" suffix=")" />
+      </date>
+      <text variable="title" font-style="italic"/>
+      <text variable="container-title"/>
+      <text variable="publisher"/>
+      <text variable="publisher-place"/>
+      <text variable="URL"/>
+      <group>
+        <text term="accessed" prefix="Abgerufen am " suffix=":"/>
+        <date variable="accessed">
+          <date-part name="day" suffix="."/>
+          <date-part name="month" suffix="."/>
+          <date-part name="year"/>
+        </date>
+      </group>
+    </layout>
+  </bibliography>
+</style>
